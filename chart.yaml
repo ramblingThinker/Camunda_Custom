@@ -1,0 +1,24 @@
+apiVersion: v2
+name: camunda-platform-custom
+description: A Helm chart for deploying a customized Camunda Platform 8 instance.
+type: application
+version: 0.1.0  # Increment this with changes
+appVersion: "8.2.0" # Or your target Camunda version
+keywords:
+  - camunda
+  - workflow
+  - bpm
+  - zeebe
+  - kubernetes
+  - helm
+home: https://camunda.com/
+sources:
+  - https://github.com/camunda/camunda-platform
+maintainers:
+  - name: Your Name (or Organization)
+    email: your.email@example.com
+dependencies:
+  - name: elasticsearch
+    version: ">=7.17.0 <9.0.0" # Adjust as needed for ES compatibility
+    repository: https://helm.elastic.co
+condition: elasticsearch.enabled # Only install ES if it's enabled
